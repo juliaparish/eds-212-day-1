@@ -39,10 +39,13 @@ fish_weight <- function(a, length, b) {
 ### Milkfish (60 cm) 
 
 ```{r}
-fish_weight(a = 0.0905, length = 60, b = 2.52)
+mf <- fish_weight(a = 0.0905, length = 60, b = 2.52)
 
 
 ```
+
+Milkfish weighs `r mf`
+
 
 ### Giant trevally (60 cm)
 
@@ -93,6 +96,8 @@ ggplot(data = barracuda_df, aes(x = fish_lengths, y = barracuda_weight)) +
        title = "Fishy Lengths")
 
 ```
+
+
 
 
 

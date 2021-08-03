@@ -1,0 +1,99 @@
+---
+title: "eds-212-day-1"
+author: "Julia Parish"
+date: "8/2/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+```{r}
+#Heading Formats for Fish Length Weight
+
+##subheader size
+
+###try again
+
+####big fish smaller font
+
+#####normal
+
+
+```
+
+```{r}
+
+fish_weight <- function(a, length, b) {
+  a*length^b
+  
+}
+
+
+```
+
+### Milkfish (60 cm) 
+
+```{r}
+fish_weight(a = 0.0905, length = 60, b = 2.52)
+
+
+```
+
+### Giant trevally (60 cm)
+
+```{r}
+
+gt <- fish_weight(a = 0.0353, length =  60, b = 3.05)
+
+```
+
+Giant trevally weighs `r gt`
+
+### Great barracuda (60 cm)
+
+```{r}
+
+gb <- fish_weight(a = 0.0181, length = 60, b = 3.27)
+
+```
+
+Giant barracuda weighs `r gt`
+
+```{r}
+
+####Fish Size Ranges
+
+fish_lengths <- 1:200
+
+```
+
+```{r}
+
+barracuda_weight <- fish_weight(a = 0.0181, length = fish_lengths, b = 3.27)
+
+```
+
+```{r}
+
+barracuda_df <- data.frame(fish_lengths, barracuda_weight)
+
+```
+
+```{r}
+
+ggplot(data = barracuda_df, aes(x = fish_lengths, y = barracuda_weight)) + 
+  geom_point() +
+  labs(x = "Fish Lengths", 
+       y = "Barracuda Weights",
+       title = "Fishy Lengths")
+
+```
+
+
+
+
